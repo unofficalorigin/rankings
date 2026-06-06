@@ -1,23 +1,30 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>{{ page.title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>{{ page.title }} | {{ site.title }}</title>
+
   <link rel="stylesheet" href="/css/style.css">
+
+  <!-- optional: makes red accents feel sharper -->
+  <meta name="theme-color" content="#ff0000">
 </head>
+
 <body>
 
-<header>
-  <h1>{{ site.title }}</h1>
-</header>
+  <header>
+    <h1>{{ site.title }}</h1>
+  </header>
 
-<main>
-  {{ content }}
-</main>
+  <main>
+    {{ content }}
+  </main>
 
-<footer>
-  <p>Unofficial Origin  Rankings</p>
-</footer>
+  <footer>
+    <p>Unofficial Origin Rankings • © {{ site.time | date: "%Y" }}</p>
+  </footer>
 
 </body>
 </html>
