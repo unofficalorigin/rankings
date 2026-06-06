@@ -1,80 +1,127 @@
+/* Base body and fonts */
 body {
   margin: 0;
   font-family: system-ui, Arial, sans-serif;
   background: #000;
   color: #fff;
-  display: flex;
-  justify-content: center;
   padding: 2rem;
+}
+
+/* Header styling */
+header h1 {
+  text-align: center;
+  color: #ff0000;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-bottom: 0.25rem;
+}
+
+header .subtitle {
+  text-align: center;
+  color: #aaa;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  margin-top: -4px;
 }
 
 /* Main container feel */
 main {
   width: 100%;
   max-width: 900px;
-  background: #0f0f0f;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #0f0f0f, #0a0a0a);
   padding: 2rem;
-  border: 1px solid #ff0000;
-  border-radius: 12px;
-  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
+  border: 1px solid rgba(255, 0, 0, 0.6);
+  border-radius: 14px;
+  box-shadow: 0 0 35px rgba(255, 0, 0, 0.15);
+  position: relative;
 }
 
-/* Title */
-h1, h2 {
-  text-align: center;
-  color: #ff0000;
-  letter-spacing: 2px;
-  text-transform: uppercase;
+/* Optional top accent bar */
+main::before {
+  content: "";
+  display: block;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ff0000, transparent);
+  margin-bottom: 1.5rem;
+  border-radius: 2px;
 }
 
 /* Table styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1.5rem;
+  margin-top: 1rem;
   overflow: hidden;
-  border-radius: 8px;
+  border-radius: 10px;
+  background: #0c0c0c;
 }
 
-/* Header */
+/* Table headers */
 th {
-  background: #111;
+  text-align: left;
+  padding: 0.9rem 1rem;
+  border-bottom: 2px solid #ff0000;
   color: #ff0000;
   text-transform: uppercase;
   font-size: 0.85rem;
-  padding: 1rem;
-  border-bottom: 2px solid #ff0000;
 }
 
-/* Rows */
+/* Table cells */
 td {
-  padding: 1rem;
-  border-bottom: 1px solid #222;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid #1f1f1f;
 }
 
 /* Hover effect */
 tr:hover {
-  background: #1a1a1a;
+  background: rgba(255, 0, 0, 0.05);
   transition: 0.2s;
 }
 
 /* Rank column emphasis */
 td:first-child {
-  font-weight: bold;
-  color: #ff0000;
+  font-weight: 700;
   width: 80px;
   text-align: center;
+  color: #ff0000;
+  text-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
 }
 
-/* Top 3 highlight idea */
+/* Top 3 highlight */
 tr:nth-child(1) td:first-child {
   color: gold;
+  text-shadow: 0 0 10px gold;
 }
 
 tr:nth-child(2) td:first-child {
   color: silver;
+  text-shadow: 0 0 10px silver;
 }
 
 tr:nth-child(3) td:first-child {
-  color: #cd7f32; /* bronze */
+  color: #cd7f32;
+  text-shadow: 0 0 10px #cd7f32;
+}
+
+/* Footer styling */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #666;
+  font-size: 0.85rem;
+}
+
+/* Optional animation for rows */
+tr {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeIn 0.5s forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
