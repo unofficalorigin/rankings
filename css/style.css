@@ -1,68 +1,80 @@
 body {
-  font-family: system-ui, sans-serif;
-  background-color: #000000;  /* main black background */
-  color: #ffffff;             /* main white text */
-  max-width: 900px;
-  margin: auto;
-  padding: 1rem;
-}
-
-header {
-  text-align: center;
-  padding: 1rem 0;
-  background-color: #111111;   /* subtle dark header */
-  border-bottom: 2px solid #ff0000; /* red accent line */
-}
-
-h1 {
-  color: #ff0000;  /* red for main title */
   margin: 0;
+  font-family: system-ui, Arial, sans-serif;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
 }
 
-h2 {
-  color: #ffffff;  /* white subheadings */
-  margin-top: 2rem;
-  border-bottom: 1px solid #ff0000; /* subtle red underline */
-  padding-bottom: 0.25rem;
+/* Main container feel */
+main {
+  width: 100%;
+  max-width: 900px;
+  background: #0f0f0f;
+  padding: 2rem;
+  border: 1px solid #ff0000;
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 0, 0, 0.2);
 }
 
+/* Title */
+h1, h2 {
+  text-align: center;
+  color: #ff0000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Table styling */
 table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
-  background-color: #111111;  /* black table background */
+  margin-top: 1.5rem;
+  overflow: hidden;
+  border-radius: 8px;
 }
 
-th, td {
-  padding: 0.75rem;
-  border-bottom: 1px solid #ff0000;  /* red accent border between rows */
-  text-align: left;
-}
-
+/* Header */
 th {
-  background-color: #222222;  /* slightly lighter black for headers */
-  color: #ff0000;             /* red header text */
+  background: #111;
+  color: #ff0000;
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  padding: 1rem;
+  border-bottom: 2px solid #ff0000;
 }
 
-tr:nth-child(even) {
-  background-color: #1a1a1a;  /* subtle black/grey stripe for readability */
+/* Rows */
+td {
+  padding: 1rem;
+  border-bottom: 1px solid #222;
 }
 
+/* Hover effect */
 tr:hover {
-  background-color: #333333;  /* hover effect for better UX */
+  background: #1a1a1a;
+  transition: 0.2s;
 }
 
-hr {
-  border: none;
-  border-top: 1px solid #ff0000; /* red separator between tables */
-  margin: 2rem 0;
-}
-
-footer {
+/* Rank column emphasis */
+td:first-child {
+  font-weight: bold;
+  color: #ff0000;
+  width: 80px;
   text-align: center;
-  margin-top: 2rem;
-  padding-top: 1rem;
-  border-top: 1px solid #ff0000;
-  color: #ffffff;
-  font-size: 0.9rem;
+}
+
+/* Top 3 highlight idea */
+tr:nth-child(1) td:first-child {
+  color: gold;
+}
+
+tr:nth-child(2) td:first-child {
+  color: silver;
+}
+
+tr:nth-child(3) td:first-child {
+  color: #cd7f32; /* bronze */
 }
