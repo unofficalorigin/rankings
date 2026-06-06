@@ -1,0 +1,12 @@
+- name: Nick
+  score: 5
+  public_score: 0
+- name: Oscar
+  score: 2
+  public_score: 0
+- name: Twiggy
+  score: 2
+  public_score: 0
+- name: Tom
+  score: 1
+  public_score: 0

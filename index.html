@@ -1,0 +1,94 @@
+---
+layout: default
+title: Gym Rankings
+---
+
+<h2>Whitebelt Rankings (Internal)</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+      <th>Score</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% assign whitebelts = site.data.whitebelts | sort: "score" | reverse %}
+
+    {% assign last_score = nil %}
+    {% assign rank = 0 %}
+    {% assign display_rank = 0 %}
+
+    {% for member in whitebelts %}
+
+      {% assign rank = rank | plus: 1 %}
+
+      {% if member.score != last_score %}
+        {% assign display_rank = rank %}
+      {% endif %}
+
+      <tr>
+        <td>
+          {% if member.score == last_score %}
+            =
+          {% else %}
+            {{ display_rank }}
+          {% endif %}
+        </td>
+
+        <td>{{ member.name }}</td>
+        <td>{{ member.score }}</td>
+      </tr>
+
+      {% assign last_score = member.score %}
+
+    {% endfor %}
+  </tbody>
+</table>
+
+<hr>
+
+<h2>Whitebelt Rankings (Public vote) </h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Rank</th>
+      <th>Name</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    {% assign whitebelts_public = site.data.whitebelts | sort: "public_score" | reverse %}
+
+    {% assign last_score = nil %}
+    {% assign rank = 0 %}
+    {% assign display_rank = 0 %}
+
+    {% for member in whitebelts_public %}
+
+      {% assign rank = rank | plus: 1 %}
+
+      {% if member.public_score != last_score %}
+        {% assign display_rank = rank %}
+      {% endif %}
+
+      <tr>
+        <td>
+          {% if member.public_score == last_score %}
+            =
+          {% else %}
+            {{ display_rank }}
+          {% endif %}
+        </td>
+
+        <td>{{ member.name }}</td>
+      </tr>
+
+      {% assign last_score = member.public_score %}
+
+    {% endfor %}
+  </tbody>
+</table>
